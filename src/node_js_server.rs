@@ -1,7 +1,7 @@
 use flurl::IntoFlUrl;
 use my_trx_lib::TrxAmount;
 
-use crate::{Base58Address, TrxWalletContract, TxModel, WalletBalance};
+use crate::{Base58Address, TrxWallet, TxModel, WalletBalance};
 
 use super::SrcTrxWallet;
 
@@ -9,7 +9,7 @@ use super::SrcTrxWallet;
 pub trait NodeJsServer {
     async fn get_trx_node_js_url(&self) -> String;
 
-    async fn create_wallet(&self) -> TrxWalletContract {
+    async fn create_wallet(&self) -> TrxWallet {
         let node_js_url = self.get_trx_node_js_url().await;
 
         let flurl_response = node_js_url

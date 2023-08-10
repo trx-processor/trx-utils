@@ -1,7 +1,7 @@
-use crate::{Base58Address, TrxWalletContract};
+use crate::{Base58Address, TrxWallet};
 
 pub struct SrcTrxWallet {
-    trx_wallet: TrxWalletContract,
+    trx_wallet: TrxWallet,
 }
 
 impl SrcTrxWallet {
@@ -14,7 +14,7 @@ impl SrcTrxWallet {
     }
 }
 
-impl Into<SrcTrxWallet> for TrxWalletContract {
+impl Into<SrcTrxWallet> for TrxWallet {
     fn into(self) -> SrcTrxWallet {
         SrcTrxWallet { trx_wallet: self }
     }

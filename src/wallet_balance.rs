@@ -1,5 +1,3 @@
-use std::sync::Arc;
-
 use my_trx_lib::TrxAmount;
 
 pub struct WalletBalance {

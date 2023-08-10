@@ -3,22 +3,22 @@ use serde::*;
 use crate::Base58Address;
 
 #[derive(Serialize, Deserialize)]
-pub struct TrxWalletContract {
+pub struct TrxWallet {
     #[serde(rename = "privateKey")]
     pub private_key: String,
     #[serde(rename = "publicKey")]
     pub public_key: String,
 
-    pub address: TrxAddressContract,
+    pub address: TrxAddress,
 }
 
 #[derive(Serialize, Deserialize)]
-pub struct TrxAddressContract {
+pub struct TrxAddress {
     pub base58: String,
     pub hex: String,
 }
 
-impl TrxAddressContract {
+impl TrxAddress {
     pub fn get_base_58_address(&self) -> Base58Address {
         Base58Address::new(self.base58.clone())
     }
